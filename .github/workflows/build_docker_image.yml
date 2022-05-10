@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - 'master'
-      - 'develop'
+      - 'beta'
     # Sequence of patterns matched against refs/tags
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
@@ -110,7 +110,7 @@ jobs:
           build-args: |
             MAINTAINER=${{ github.repository_owner }}
             QL_BRANCH=${{ github.ref_name }}
-          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x,linux/386
           context: docker/
           push: true
           tags: ${{ steps.meta.outputs.tags }}

@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:lts-alpine3.12
 
 ARG QL_MAINTAINER="whyour"
 LABEL maintainer="${QL_MAINTAINER}"
